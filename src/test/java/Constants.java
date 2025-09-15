@@ -9,7 +9,7 @@ public class Constants {
 
     public static final String CREATE_ORDER_ENDPOINT = "/api/v1/orders";
     public static final String GET_LIST_ORDER_ENDPOINT = "/api/v1/orders";
-
+    public static final String CANCEL_ORDER_ENDPOINT = "/api/v1/orders/cancel";
 
     public static final int STATUS_CODE_OK = 200;
     public static final int STATUS_CODE_CREATE = 201;
@@ -30,4 +30,6 @@ public class Constants {
     public static final String COURIER_FIRST_NAME = "Pashka";
     public static final String INCORRECT_COURIER_LOGIN = "Pashka5";
     public static final String INCORRECT_COURIER_PASSWORD = "12";
+
+
 }

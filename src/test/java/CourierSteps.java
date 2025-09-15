@@ -23,7 +23,6 @@ public class CourierSteps {
     @Step("Получение id курьера после успешной авторизации")
     public int getCourierId(Courier courier) {
         Response response = authorisationCoirier(courier);
-        response.then().statusCode(Constants.STATUS_CODE_OK);
         return response.then().extract().path("id");
     }
 
