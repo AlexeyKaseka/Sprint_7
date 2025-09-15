@@ -18,7 +18,7 @@ public class Constants {
     public static final int STATUS_CODE_CONFLICT = 409;
 
     public static final String COURIER_BAD_REQUEST_MESSEGE = "Недостаточно данных для создания учетной записи";
-    public static final String COURIER_CONFLICT_MESSEGE = "Этот логин уже используется";
+    public static final String COURIER_CONFLICT_MESSAGE = "Этот логин уже используется. Попробуйте другой.";
     public static final String LOGIN_BAD_REQUEST_MESSEGE = "Недостаточно данных для входа";
     public static final String LOGIN_NOT_FOUND_MESSEGE = "Учетная запись не найдена";
 
