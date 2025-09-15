@@ -27,7 +27,7 @@ public class CreateCourierTest {
     @Description("Позитивный тест: проверка успешного создания курьера с полными данными (логин, пароль, имя)")
     public void createCourierWithValidData() {
         courier = new Courier(
-                Constants.COIRIER_LOGIN,
+                Constants.COURIER_LOGIN,
                 Constants.COURIER_PASSWORD,
                 Constants.COURIER_FIRST_NAME
         );
@@ -44,7 +44,7 @@ public class CreateCourierTest {
     @Description("Позитивный тест: проверка успешного создания курьера с не полными данными (логин, пароль)")
     public void createCourierWithOutFirstName() {
         courier = new Courier(
-                Constants.COIRIER_LOGIN,
+                Constants.COURIER_LOGIN,
                 Constants.COURIER_PASSWORD,
                 null
         );
@@ -78,7 +78,7 @@ public class CreateCourierTest {
     @Description("Негативный тест: проверка не успешного создания курьера с не полными данными (логин, имя)")
     public void createCourierWithOutPassword() {
         courier = new Courier(
-                Constants.COIRIER_LOGIN,
+                Constants.COURIER_LOGIN,
                 null,
                 Constants.COURIER_FIRST_NAME
         );
@@ -94,7 +94,7 @@ public class CreateCourierTest {
     @Description("Негативный тест: проверка не успешного создания двух одинаковых курьеров")
     public void createTwoIdenticalCourier() {
         courier = new Courier(
-                Constants.COIRIER_LOGIN,
+                Constants.COURIER_LOGIN,
                 Constants.COURIER_PASSWORD,
                 Constants.COURIER_FIRST_NAME
         );
@@ -114,7 +114,7 @@ public class CreateCourierTest {
     @After
     public void tearDown() {
         courier = new Courier(
-                Constants.COIRIER_LOGIN,
+                Constants.COURIER_LOGIN,
                 Constants.COURIER_PASSWORD
         );
         Response loginResponse = courierSteps.authorisationCoirier(courier);
