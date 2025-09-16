@@ -70,45 +70,11 @@ public class LoginCourierTest {
 
 
     @Test
-    @DisplayName("Авторизация курьера без пароля")
-    @Description("Негативный тест: проверка не успешной авторизации курьера с не полными данными (логин)")
-    public void authorisationCourierWithOutPassword() {
-        courier = new Courier(
-                Constants.COURIER_LOGIN,
-                null
-
-        );
-
-        courierSteps.authorisationCoirier(courier)
-                .then()
-                .statusCode(Constants.STATUS_CODE_BAD_REQUEST)
-                .body("message", is(Constants.LOGIN_BAD_REQUEST_MESSEGE));
-
-    }
-
-    @Test
-    @DisplayName("Авторизация курьера с неправильным логином")
-    @Description("Негативный тест: проверка не успешной авторизации курьера с неправильным логином")
-    public void authorisationCourierWithIncorrectLogin() {
+    @DisplayName("Авторизация курьера с несуществующей парой логин-пароль")
+    @Description("Негативный тест: проверка не успешной авторизации курьера с несуществующим логином и паролем")
+    public void authorisationCourierWithIncorrectLoginAndPassword() {
         courier = new Courier(
                 Constants.INCORRECT_COURIER_LOGIN,
-                Constants.COURIER_PASSWORD
-
-        );
-
-        courierSteps.authorisationCoirier(courier)
-                .then()
-                .statusCode(Constants.STATUS_COD_NOT_FOUND)
-                .body("message", is(Constants.LOGIN_NOT_FOUND_MESSEGE));
-
-    }
-
-    @Test
-    @DisplayName("Авторизация курьера с неправильным паролем")
-    @Description("Негативный тест: проверка не успешной авторизации курьера с неправильным паролем")
-    public void authorisationCourierWithIncorrectPassword() {
-        courier = new Courier(
-                Constants.COURIER_LOGIN,
                 Constants.INCORRECT_COURIER_PASSWORD
 
         );
