@@ -31,5 +31,22 @@ public class Constants {
     public static final String INCORRECT_COURIER_LOGIN = "Pashka5";
     public static final String INCORRECT_COURIER_PASSWORD = "12";
 
+    public static final Object[][] ALL_ORDER_TEST_CASES = {
+            {"Petr", "Petrov", "Arbat, 12", "Arbatskaya", "+7 800 355 35 35", 3,
+                    "2025-09-06", "Petr, come back to Arbat", new String[]{"BLACK"}},
+
+
+            {"Petr", "Petrov", "Arbat, 12", "Arbatskaya", "+7 800 355 35 35", 3,
+                    "2025-09-06", "Petr, come back to Arbat", new String[]{"GREY"}},
+
+
+            {"Petr", "Petrov", "Arbat, 12", "Arbatskaya", "+7 800 355 35 35", 3,
+                    "2025-09-06", "Petr, come back to Arbat", new String[]{"BLACK", "GREY"}},
+
+
+            {"Petr", "Petrov", "Arbat, 12", "Arbatskaya", "+7 800 355 35 35", 3,
+                    "2025-09-06", "Petr, come back to Arbat", null}
+    };
+
 
 }
