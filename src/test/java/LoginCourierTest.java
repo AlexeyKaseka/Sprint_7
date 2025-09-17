@@ -86,17 +86,29 @@ public class LoginCourierTest {
     }
 
 
-
-
-
-
-
     @Test
-    @DisplayName("Авторизация курьера с несуществующей парой логин-пароль")
-    @Description("Негативный тест: проверка не успешной авторизации курьера с несуществующим логином и паролем")
-    public void authorisationCourierWithIncorrectLoginAndPassword() {
+    @DisplayName("Авторизация курьера с несуществующим логином")
+    @Description("Негативный тест: проверка не успешной авторизации курьера с несуществующим логином")
+    public void authorisationCourierWithIncorrectLogin() {
         courier = new Courier(
                 Constants.INCORRECT_COURIER_LOGIN,
+                Constants.COURIER_PASSWORD
+
+        );
+
+        courierSteps.authorisationCoirier(courier)
+                .then()
+                .statusCode(Constants.STATUS_COD_NOT_FOUND)
+                .body("message", is(Constants.LOGIN_NOT_FOUND_MESSEGE));
+
+    }
+
+    @Test
+    @DisplayName("Авторизация курьера с несуществующим паролем")
+    @Description("Негативный тест: проверка не успешной авторизации курьера с несуществующим паролем")
+    public void authorisationCourierWithIncorrectPassword() {
+        courier = new Courier(
+                Constants.COURIER_LOGIN,
                 Constants.INCORRECT_COURIER_PASSWORD
 
         );
