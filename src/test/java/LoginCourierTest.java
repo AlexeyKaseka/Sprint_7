@@ -68,6 +68,28 @@ public class LoginCourierTest {
 
     }
 
+    @Test
+    @DisplayName("Авторизация курьера без пароля")
+    @Description("Негативный тест: проверка не успешной авторизации курьера с не полными данными (логин)")
+    public void authorisationCourierWithOutPassword() {
+        courier = new Courier(
+                Constants.COURIER_LOGIN,
+                null
+
+        );
+
+        courierSteps.authorisationCoirier(courier)
+                .then()
+                .statusCode(Constants.STATUS_CODE_BAD_REQUEST)
+                .body("message", is(Constants.LOGIN_BAD_REQUEST_MESSEGE));
+
+    }
+
+
+
+
+
+
 
     @Test
     @DisplayName("Авторизация курьера с несуществующей парой логин-пароль")
