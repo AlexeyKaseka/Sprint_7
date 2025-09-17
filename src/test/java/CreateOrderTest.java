@@ -15,7 +15,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 @RunWith(Parameterized.class)
-public class OrderTest {
+public class CreateOrderTest {
 
     private OrderSteps orderSteps;
     private Order order;
@@ -31,8 +31,8 @@ public class OrderTest {
     private String comment;
     private String[] color;
 
-    public OrderTest(String firstName, String lastName, String address, String metroStation,
-                     String phone, int rentTime, String deliveryDate, String comment, String[] color) {
+    public CreateOrderTest(String firstName, String lastName, String address, String metroStation,
+                           String phone, int rentTime, String deliveryDate, String comment, String[] color) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -80,20 +80,6 @@ public class OrderTest {
                 .body("track", is(notNullValue()));
 
     }
-
-
-    @Test
-    @DisplayName("Получение списков заказов")
-    @Description("Позитивный тест: проверка успешного получения списка заказов")
-    public void getAllOrderList() {
-        orderSteps.getOrderList()
-                .then()
-                .statusCode(Constants.STATUS_CODE_OK)
-                .body("orders", is(notNullValue()));
-
-    }
-
-
 
 
     @After
